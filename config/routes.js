@@ -77,6 +77,7 @@ module.exports = function(app){
     * @所有详情列表页
     * @分类创建页
     * @保存分类
+    * @分类列表业
     * @详情列表页删除详情
     **/
 
@@ -87,54 +88,6 @@ module.exports = function(app){
     app.get('/admin/category/list',User.signinRequired,User.adminRequired,Category.categoryList);
 
     app.delete('/admin/product/delete',User.signinRequired,User.adminRequired,Product.productDelete);
-
-
-
-    // /**
-    // * 前站
-    // * @主页
-    // * @详情页
-    // * @用户注册页面
-    // * @用户登录页面
-    // * @用户注册请求
-    // * @用户登录请求
-    // * @用户登出跳转
-    // **/
-    // app.get('/',Index.index);
-    // app.get('/product/:id',Product.detail);
-    // app.get('/signup',User.showSignUp);
-    // app.get('/signin',User.showSignIn);
-    // app.post('/user/signup',User.signUp);
-    // app.post('/user/signin',User.signIn);
-    // app.get('/user/logout',User.logOut);
-
-    // app.post('/user/comment',User.signinRequired,Comment.save);
-
-    // app.get('/results',Index.search);
-
-
-    // /**
-    // * 后台
-    // * @用户列表页面
-    // * @详情创建页
-    // * @详情更新页
-    // * @预览详情
-    // * @详情列表页
-    // * @分类创建页
-    // * @保存分类
-    // * @详情列表页删除详情
-    // **/
-
-    // app.get('/admin/user/list',User.signinRequired,User.adminRequired,User.userList);
-    // app.get('/admin/product/new',User.signinRequired,User.adminRequired,Product.productNew);
-    // app.get('/admin/product/update/:id',User.signinRequired,User.adminRequired,Product.productUpdate);
-    // app.post('/admin/product/preview',multipartMiddleware,User.signinRequired,User.adminRequired,Product.savePoster,Product.productPreview);
-    // app.get('/admin/product/list',User.signinRequired,User.adminRequired,Product.productList);
-    // app.get('/admin/category/new',User.signinRequired,User.adminRequired,Category.categoryNew);
-    // app.post('/admin/category/save',User.signinRequired,User.adminRequired,Category.categorySave);
-    // app.get('/admin/category/list',User.signinRequired,User.adminRequired,Category.categoryList);
-
-    // app.delete('/admin/product/delete',User.signinRequired,User.adminRequired,Product.productDelete);
 
 };
 
