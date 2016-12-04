@@ -1,0 +1,18 @@
+//-
+    @file categoryAdmin.jade
+    @author zx
+    @description 录入页
+
+extend ../layout
+
+block content
+    .container
+        .row
+            form.form-horizontal(method="post",action="/admin/category/save")
+                .form-group
+                    label.col-sm-2.control-label(for="inputCategory") 分类
+                    .col-sm-10
+                        input#input_category.form-control(type="text" name="category[name]" value="#{category.name}" placeholder="请录入产品分类")
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type="submit") 存储

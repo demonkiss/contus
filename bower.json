@@ -1,0 +1,23 @@
+{
+  "name": "echeese",
+  "version": "0.0.1",
+  "authors": [
+    "zhangxin38 <zhangxin38@baidu.com>"
+  ],
+  "description": "echeese site",
+  "keywords": [
+    "echeese"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

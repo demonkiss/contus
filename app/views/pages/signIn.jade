@@ -1,0 +1,22 @@
+//-
+    @file detail.jade
+    @author zx
+    @description 登录页
+
+extend ../layout
+block content
+    .container
+        .raw
+            .col-md-5
+                form(method= "POST", action="/user/signin")
+                    .modal-header  #{message}
+                    .modal-body
+                        .form-group
+                            label(for="signin_name") 用户名
+                            input#signin_name.form-control(name="user[name]",type="text")
+                        .form-group
+                            label(for="signin_password") 密码
+                            input#signin_password.form-control(name="user[password]",type="text")
+                    .modal-footer
+                        button.btn.btn-default(type="button" data-dismiss="modal") 关闭
+                        button.btn.btn-success(type="submit") 登录

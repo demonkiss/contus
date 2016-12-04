@@ -1,0 +1,33 @@
+//-
+    @file results.jade
+    @author zx
+    @description 列表页
+extends ../layout
+block content
+    .container
+        .raw
+            .panel.panel-default
+                .penel-heading
+                    h3 #{keyWord}
+                .panel-body
+                    if results && results.length > 0
+                        each item in results
+                            .col-md-2
+                                .thumbnail
+                                    a(href="/product/#{item._id}")
+                                        img(src="#{item.poster}",alt="#{item.title}")
+                                    .caption
+                                        h3 #{item.title}
+                                        p
+                                            a.btn.btn-primary(href="/product/#{item._id}",role="button") 查看详情
+            ul.pagination
+                - for (var i = 0; i < totalPage; i++ ){
+                    - if (currentPage == (i+1)){
+                        li.active
+                            span #{currentPage}
+                    - }
+                    - else{
+                        li
+                            a(href='/results?#{query}&p=#{i}') #{i+1}
+                    - }
+                - }

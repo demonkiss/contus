@@ -1,0 +1,15 @@
+//-
+    @file layout.jade
+    @author zx
+    @description 公共页头
+
+doctype
+html
+    head
+        meta(charset="utf-8")
+        title #{title}
+        include ./includes/head
+    body
+        include ./includes/header
+        block content
+

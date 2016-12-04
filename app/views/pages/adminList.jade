@@ -1,0 +1,29 @@
+admin//-
+    @file list.jade
+    @author zx
+    @description  列表页
+extends ../layout
+block content
+    .container
+        .row
+            table.table.table-hover.table-bordered
+                thead
+                    tr
+                        th 产品名字
+                        th 上架时间
+                        th 创建时间
+                        th 更新时间
+                        th 查看
+                        th 修改
+                        th 删除
+                tbody
+                    each item in productList
+                        tr(class="item-id-#{item._id}")
+                            td #{item.title}
+                            td #{item.time}
+                            td #{moment(item.meta.createAt).format('MM/DDYYYY')}
+                            td #{moment(item.meta.updateAt).format('MM/DDYYYY')}
+                            td: a(target="_blank", href="/product/#{item._id}") 查看
+                            td: a(target="_blank", href="/admin/product/update/#{item._id}") 修改
+                            td: button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+    script(src="/js/list.js")
