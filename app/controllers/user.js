@@ -19,6 +19,10 @@ exports.signUp = function(req,res,next){
     var _user = req.body.user;
     logger.info(_user);
 
+    if(_user.name == "" || _user.password == ""){
+        return res.redirect('/signup');
+    }
+
     UserDB.find({name:_user.name},function(err,exitUser){
         if(err){
             logger.error(err);
@@ -72,7 +76,11 @@ exports.signIn = function(req,res,next){
     var name = _user.name;
     var password = _user.password;
 
-    logger.info(req);
+    // logger.info(req);
+    if(_user.name == "" || _user.password == ""){
+        return res.redirect('/signup');
+    }
+
 
     UserDB.findOne({name:_user.name},function(err,exitUser){
         if(err){
